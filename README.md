@@ -1,5 +1,5 @@
 ### Atividade 1
-##Contexto
+## Contexto
 A empresa recebe uma nova demanda de uma casa cultural da cidade que conta com uma sala de cinema. O objetivo é montar um site para o estabelecimento, porém há uma seção específica na qual você trabalhará. Além da divulgação das ações do estabelecimento, a casa cultural quer um espaço em que as pessoas possam registrar os filmes a que assistiram e avaliar cada um deles (fornecer análises).
  
 Concentrando-se nessa funcionalidade, neste momento de avaliações e protótipos, você deverá criar um sistema web que permita cadastrar filmes e realizar análises desses filmes cadastrados. Para isso, você precisará de duas entidades Model:
