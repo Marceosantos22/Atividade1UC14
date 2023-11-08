@@ -1,3 +1,10 @@
+
+### Video do resultado da Atividade:
+https://github.com/Marceosantos22/Atividade1UC14/assets/119744462/de8ae792-0489-4350-8bbd-f1aa33e42d8c
+
+
+
+
 # Atividade 1
 ## Contexto
 A empresa recebe uma nova demanda de uma casa cultural da cidade que conta com uma sala de cinema. O objetivo é montar um site para o estabelecimento, porém há uma seção específica na qual você trabalhará. Além da divulgação das ações do estabelecimento, a casa cultural quer um espaço em que as pessoas possam registrar os filmes a que assistiram e avaliar cada um deles (fornecer análises).
