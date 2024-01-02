@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CineWeb - Filmes cadatrados</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../static/css/style.css" />
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+
+</head>
+
+<body>
+    <!--HEADER-->
+    <header>
+        <!--NAV PRINCIPAL-->
+        <nav class="navbar bg-secondary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../templates/index.html">
+                    <img src="../static/img/icons8-cinema-48.png" alt="Logo" width="58" height="40"
+                        class="d-inline-block align-text-top" />
+                        <Span id="textLogo">CineWeb</Span>
+                </a>
+            </div>
+        </nav>
+        <!--FIM NAV PRINCIPAL-->
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../templates/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../templates/cadastro.html">Cadastro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../templates/listaFilmes.html">Lista de Filmes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../templates/avaliacoes.html">Avaliações</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <!--FIM NAVBAR-->
+    </header>
+    <!--FIM HEADER-->
+    <!--MAIN-->
+    <main class="mainLista">
+        <section>
+            <div class=" container justify-content-center shadow" id="container-table">
+                <!--TABLE-->
+                <table class="table table-striped table-hover table-bordered mt-3" id="tabelaFilmes">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="col">ID</th>
+                            <th scope="col" class="col-3">Título</th>
+                            <th scope="col" class="col-2">Genero</th>
+                            <th scope="col" class="col-3">Ano de Lançamento</th>
+                            <th scope="col" class="col-6">Sinopse</th>
+                            <th scope="col" class="col-2">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody class="dadosFilmes">
+                    </tbody>
+                </table> <!--FIM TABLE-->
+            </div>
+        </section>
+
+        <!--MODEL AVALIAR-->
+        <div class="modal" id="meuModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Avaliação</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <form class="col-md-12 row g-1 p-2" id="formSalvarAnalise">
+                            <div class="col-md-4 col-sm-4 m-1">
+                                <label for="inputCodFilme" class="form-label">Código do Filme:</label>
+                                <input type="text" class="form-control" id="inputCodFilme" name="codFilme" readonly />
+                            </div>
+                            <div class="col-md-12 m-1">
+                                <label for="inputFilme" class="form-label">Filme:</label>
+                                <input type="text" class="form-control" id="inputFilme" name="filme" readonly />
+                            </div>
+                            <div class="col-md-6 col-sm-4 m-1">
+                                <label for="inputNota" class="form-label">Nota</label>
+                                <input type="text" class="form-control" id="inputNota" name="nota"
+                                    placeholder="Dê sua Nota (0 a 10)." />
+                            </div>
+                            <div class="form-floating m-1 col-12">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="analiseInput"
+                                    name="analiseUser" style="height: 100px"></textarea>
+                                <label for="inputAnalise">Qual sua analise?</label>
+                            </div>
+                            <button class="btn btn-success col-4" type="submit">Enviar</button>
+                        </form>
+                    </div>                    
+                </div>
+            </div>
+        </div> <!--FIM MODEL AVALIAR-->
+        <div class="modal " tabindex="-1" id="postAvaliacao">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title"><strong>Atenção!</strong></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Não foi possível salvar sua Avaliação!<br> Favor verificar a API. </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>              
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal " tabindex="-1" id="postAvaliacaoSucesso">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title"><strong>Obrigado</strong></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Avaliação registrada com sucesso!<br>                 </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>              
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </main> <!--FIM MAIN-->
+    <Footer>
+        <div class="card text-center bg-secondary">
+            <div class="card-header">
+                Informações de Contato
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Desenvolvido por:</h5>
+                <p class="card-text">Marcelo Oliveira</p>
+                <a href="https://beacons.ai/marceosantos22" target="_blank"><img
+                        src="../static/img/60f3709027327b3c7d731c4c_beacons.png" alt="" width="90px" height="30px"></a>
+            </div>
+            <div class="card-footer text-body-secondary">
+                © 2023 Casa de Cultura WebCine - Todos os direitos reservados.
+            </div>
+        </div>
+    </Footer> <!--FIM FOOTER-->
+    <!--SCRIPT BOOTSTRAP-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!--SCRIPT JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!--SCRIPT-->
+    <script src="../static/script/script.js"></script>
+    <!--SCRIPT DATE-->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+</body>
+
+</html>

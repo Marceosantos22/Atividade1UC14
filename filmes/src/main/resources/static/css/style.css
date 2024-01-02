@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+main{
+    background-color: #e9e8e3;
+}
+section{
+    padding: 5px;
+}
+#textLogo{
+
+    font-family: agbalumo;
+    font-weight: 30px;
+    font-size: 28px;
+    color: white;
+    margin-top: 10px;
+}
+#bannerPrincipal{
+
+    background-image: url(../img/banner-principal.jpg);
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+}
+#bemvindo, #culturaWeb {
+
+    
+    
+    color: white;
+    font-size: bold;
+    font-family: Agbalumo;
+
+
+}
+#tituloMes{
+
+    font-size: 30px;
+    font-size: bold;
+    border-bottom: 2px solid black;
+    font-family: agbalumo;
+
+}
+.formulario{
+    background-color: white;   
+
+} 
+#section1 {
+
+    display: flex;
+    flex-direction: row;
+    max-height: 500px; 
+    max-width: 100%;
+   
+}
+.card-hover {
+    cursor: pointer;
+    transition: 1s;
+}
+
+.card-hover:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+.mainLista{
+
+    min-height: 350px;
+    max-height: auto !important;
+
+}
+
+th, td, tr {
+    border: 1px solid #ccc; 
+    padding: 8px; 
+    text-align: center; 
+}
+#container-table{
+    
+    background-color: white;
+    padding: 2px;
+    border-radius: 10px;
+
+}
+.alertSalvo{
+
+    display: none;
+}
+.alertErroSalvar{
+
+    display: none;
+}
+
+.avalConteudo{
+
+    max-width: 700px !important;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0 20px;    
+
+}
+
+
+
